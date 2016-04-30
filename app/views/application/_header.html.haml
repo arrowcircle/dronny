@@ -1,0 +1,13 @@
+%nav.navbar.navbar-light.bg-faded
+  = link_to 'Дрони', root_url, class: 'navbar-brand'
+  %ul.nav.navbar-nav
+    %li.nav-item.active
+      %a.nav-link{:href => "#"}
+        Home
+        %span.sr-only (current)
+    %li.nav-item= link_to 'Features', '#', class: 'nav-link'
+    %li.nav-item= link_to 'About', '#', class: 'nav-link'
+
+  = form_tag '#', class: 'form-inline pull-xs-right' do
+    = text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Поиск'
+    = submit_tag 'Search', class: 'btn btn-success-outline'
