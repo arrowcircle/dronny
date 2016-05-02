@@ -1,0 +1,25 @@
+=form_for @build do |f|
+  - if @build.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@build.errors.count, "error")} prohibited this build from being saved:"
+      %ul
+        - @build.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+
+  .field
+    = f.label :tag_line, "Tags (separated by spaces)"
+    - if @build.tag_list.empty?
+      = f.text_field :tag_line
+    - else
+      = f.text_field :tag_line, value: @build.tag_list
+
+  .field
+    = f.label :description
+    = f.text_area :description
+
+  .actions
+    = f.submit 'Save'

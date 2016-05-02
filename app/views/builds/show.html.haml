@@ -1,0 +1,9 @@
+%h4= @build.title
+%p
+  Tags:
+  %strong=@build.tag_list
+%p
+  Description:
+  =@build.description
+
+%p= link_to 'Edit', edit_build_path(@build)
