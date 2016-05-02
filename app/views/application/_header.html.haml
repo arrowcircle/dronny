@@ -1,13 +1,19 @@
-%nav.navbar.navbar-light.bg-faded
-  = link_to 'Дрони', root_url, class: 'navbar-brand'
-  %ul.nav.navbar-nav
-    %li.nav-item.active
-      %a.nav-link{:href => "#"}
-        Home
-        %span.sr-only (current)
-    %li.nav-item= link_to 'Features', '#', class: 'nav-link'
-    %li.nav-item= link_to 'About', '#', class: 'nav-link'
-
-  = form_tag '#', class: 'form-inline pull-xs-right' do
-    = text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Поиск'
-    = submit_tag 'Search', class: 'btn btn-success-outline'
+%nav.navbar.navbar-dark.bg-inverse.navbar-fixed-top
+  = link_to 'dronny', root_url, class: 'navbar-brand'
+  - if user_signed_in?
+    %ul.nav.navbar-nav
+      %li.nav-item.active
+        %a.nav-link{:href => "#"}
+          My builds
+          %span.sr-only (current)
+    %ul.nav.navbar-nav.pull-xs-right
+      = form_tag '#', class: 'form-inline' do
+        = text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Search'
+        = submit_tag 'Search', class: 'btn btn-success-outline'
+      %li.nav-item= link_to 'Profile', edit_user_registration_path, class: 'nav-link'
+      %li.nav-item= link_to 'Sign out', destroy_user_session_path,  class: 'nav-link',
+                                                                    method: :delete
+  - else
+    %ul.nav.navbar-nav.pull-xs-right
+      %li.nav-item= link_to 'Sign up', new_user_registration_path, class: 'nav-link'
+      %li.nav-item= link_to 'Sign in', new_user_session_path,      class: 'nav-link'
