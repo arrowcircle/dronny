@@ -1,3 +1,4 @@
+<%= provide(:title, 'Sign up') %>
 <div class="col-sm-6 center-block">
   <%= bootstrap_devise_error_messages! %>
   <div class="panel panel-default devise-bs">
@@ -9,6 +10,10 @@
         <div class="form-group">
           <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control" %>
         </div>
         <div class="form-group">
           <%= f.label :password %><br />

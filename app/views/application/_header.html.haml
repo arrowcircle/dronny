@@ -11,8 +11,7 @@
         = text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Search'
         = submit_tag 'Search', class: 'btn btn-success-outline'
       %li.nav-item= link_to 'Profile', edit_user_registration_path, class: 'nav-link'
-      %li.nav-item= link_to 'Sign out', destroy_user_session_path,  class: 'nav-link',
-                                                                    method: :delete
+      %li.nav-item= link_to 'Sign out', destroy_user_session_path,  class: 'nav-link', method: :delete
   - else
     %ul.nav.navbar-nav.pull-xs-right
       %li.nav-item= link_to 'Sign up', new_user_registration_path, class: 'nav-link'
