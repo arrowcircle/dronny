@@ -1,0 +1,15 @@
+script: bundle exec rspec
+language: ruby
+cache: bundler
+notifications:
+  email: false
+services:
+  - postgresql
+rvm:
+  - 2.3.1
+before_install:
+  - gem install bundler
+before_script:
+  - 'cp config/secrets.yml.sample config/secrets.yml'
+  - 'cp config/database.yml.travis config/database.yml'
+  - 'bundle exec rake db:setup RAILS_ENV=test'

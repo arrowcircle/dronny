@@ -15,10 +15,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-# Use Devise for the authentication machinery
-gem 'devise', '~> 4.0.1'
-# Override Devise default views with bootstrapped ones
-gem 'devise-bootstrap-views', '~> 0.0.8'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -30,12 +26,15 @@ gem 'jbuilder', '~> 2.0'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# Use Devise for the authentication machinery
+gem 'devise', '~> 4.0.1'
+# Override Devise default views with bootstrapped ones
+gem 'devise-bootstrap-views', '~> 0.0.8'
+
 # User carrierwave for userpic processing
 gem 'carrierwave', '~> 0.11.0'
 gem 'mini_magick', '~> 4.5.1'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 gem 'bootstrap', github: 'twbs/bootstrap-rubygem'
 gem 'haml-rails'
@@ -43,7 +42,24 @@ gem 'haml-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'ffaker'
+  gem 'brakeman', require: false
+  gem 'capistrano-db-tasks', require: false
+  gem 'launchy'
+  gem 'letter_opener'
+  gem 'rubocop'
+  gem 'rubycritic', require: false
+  gem 'sandi_meter', require: false
   gem 'quiet_assets'
+end
+
+group :test do
+  gem 'database_cleaner'
+  %w[rspec rspec-core rspec-expectations rspec-mocks rspec-support rspec-rails].each do |lib|
+    gem lib, git: "git://github.com/rspec/#{lib}.git", branch: 'master'
+  end
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -53,6 +69,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
