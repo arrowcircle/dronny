@@ -33,7 +33,22 @@ gem 'haml-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'ffaker'
+  gem 'brakeman', require: false
+  gem 'capistrano-db-tasks', require: false
+  gem 'launchy'
+  gem 'letter_opener'
+  gem 'rubocop'
+  gem 'rubycritic', require: false
+  gem 'sandi_meter', require: false
   gem 'quiet_assets'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :development do
