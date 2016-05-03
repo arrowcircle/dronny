@@ -1,0 +1,11 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th Tag
+
+  %tbody
+    -@tags.each do |tag|
+      %tr
+        %td= tag.name
+        %td= link_to 'Edit', edit_tag_path(tag)
+        %td= link_to 'Delete', tag_path(tag), method: :delete, data: { confirm: "Are you sure?" }

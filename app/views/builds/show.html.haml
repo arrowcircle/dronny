@@ -1,7 +1,7 @@
 %h4= @build.title
 %p
   Tags:
-  %strong=@build.tag_list
+  %strong= raw @build.tags.map(&:name).map { |t| link_to t, tagname_path(t) }.join(' ')
 %p
   Description:
   =@build.description

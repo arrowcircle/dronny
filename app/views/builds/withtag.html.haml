@@ -1,6 +1,6 @@
-%h2 Our Builds
+%h3
+  Tag:
+  = @tagname
 -@builds.each do |build|
   %p
     %strong= link_to build.title, build
-%hr/
-=link_to 'Create New build', new_build_path

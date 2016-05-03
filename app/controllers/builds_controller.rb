@@ -42,6 +42,13 @@ class BuildsController < ApplicationController
     redirect_to root_path
   end
 
+  def withtag
+    if params[:tagname]
+      @builds = Build.tagged_with(params[:tagname]).order('created_at DESC')
+      @tagname = params[:tagname]
+    end
+  end
+
   private
     def build_params
       params.require(:build).permit(:title, :tag_line, :description)

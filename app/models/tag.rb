@@ -1,3 +1,4 @@
 class Tag < ApplicationRecord
-  belongs_to :taggable, polymorphic: true
+  has_many :taggings, dependent: :destroy
+  has_many :builds, through: :taggings, source: :taggable, source_type: 'Build'
 end
