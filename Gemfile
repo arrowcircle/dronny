@@ -46,7 +46,9 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'rspec-rails'
+  %w[rspec rspec-core rspec-expectations rspec-mocks rspec-support rspec-rails].each do |lib|
+    gem lib, git: "git://github.com/rspec/#{lib}.git", branch: 'master'
+  end
   gem 'capybara'
   gem 'factory_girl_rails'
 end
