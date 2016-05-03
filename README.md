@@ -1,25 +1,13 @@
-# README
+# dronny.ru
+[dronny.ru](http://dronny.ru)
 [![Build Status](https://travis-ci.org/arrowcircle/dronny.svg?branch=master)](https://travis-ci.org/arrowcircle/dronny)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Поделиться билдом квадракоптера теперь легко
 
-Things you may want to cover:
+# Установка
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby 2.3.1
+* Postgresql 9.5+
+* `cp config/database.yml.sample config/database.yml`
+* `cp config/secrets.yml.sample config/secrets.yml`
+* `rake db:create db:migrate db:seed`
