@@ -6,7 +6,7 @@
       <h4><%= t('.title', :resource => resource_class.model_name.human , :default => "Edit #{resource_name.to_s.humanize}") %></h4>
     </div>
     <div class="panel-body">
-      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { method: :put }) do |f| %>
         <div class="form-group">
           <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, class: "form-control" %>
@@ -28,7 +28,16 @@
           <%= f.password_field :current_password, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :picture, 'Upload a profile pic:' %>
+          <%= f.label :picture, "Use #{link_to 'Gravatar', 'https://en.gravatar.com/'} or upload a picture:".html_safe %>
+          <% if picture? %>
+            <%= image_tag current_user.picture.thumb %>
+            <div class="remove">
+              <%= f.check_box :remove_picture %>
+              <%= f.label :remove_picture, 'remove' %>
+            </div>
+          <% else %>
+            <%= gravatar_for(current_user) %>
+          <% end %>
           <%= f.file_field :picture %>
         </div>
         <%= f.submit t('.update', :default => "Update"), class: "btn btn-primary" %>

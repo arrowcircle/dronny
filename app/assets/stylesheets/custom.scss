@@ -35,9 +35,15 @@ a.nav-link {
 }
 
 a.navbar-brand {
-  margin-left: 70px;
+  margin-right: 20px;
   padding: 0px;
   font-size: 25px;
+}
+
+img.navbar-brand {
+  margin-left: 70px;
+  margin-right: 5px;
+  padding: 0px;
 }
 
 ul.pull-xs-right {
@@ -98,3 +104,23 @@ footer {
     color: #a94442;
     text-align: left;
  }
+
+ /* forms */
+
+ .form-group {
+   img {
+     float: right;
+   }
+ }
+
+ .remove {
+   margin: 5px 5px 0px 0px;
+   float: right;
+   clear: both;
+ }
+
+.edit_user {
+  input.btn {
+    margin: 20px 0px 20px 0px;
+  }
+}
