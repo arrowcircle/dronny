@@ -1,6 +1,6 @@
 %nav.navbar.navbar-dark.bg-inverse.navbar-fixed-top
-  = image_tag 'drone.png', size: '40x40', class: 'navbar-brand'
-  = link_to 'dronny', root_url, class: 'navbar-brand'
+  = image_tag 'drone.png', alt: t('.logo-alt'), title: t('.brand'), size: '40x40', class: 'navbar-brand'
+  = link_to t('.brand'), root_url, class: 'navbar-brand'
   - if user_signed_in?
     %ul.nav.navbar-nav
       %li.nav-item.active
@@ -9,11 +9,13 @@
           %span.sr-only (current)
     %ul.nav.navbar-nav.pull-xs-right
       = form_tag '#', class: 'form-inline' do
-        = text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Search'
-        = submit_tag 'Search', class: 'btn btn-success-outline'
-      %li.nav-item= link_to 'Profile', edit_user_registration_path, class: 'nav-link'
-      %li.nav-item= link_to 'Sign out', destroy_user_session_path,  class: 'nav-link', method: :delete
+        = text_field_tag :query, params[:query], class: 'form-control', placeholder: t('.search')
+        = submit_tag t('.search_btn'), class: 'btn btn-success'
+      %li.nav-item= link_to t('.profile'), edit_user_registration_path, class: 'nav-link'
+      %li.nav-item= link_to t('.sign_out'), destroy_user_session_path,  class: 'nav-link', method: :delete
   - else
+    %ul.nav.navbar-nav
+      %li.nav-item= link_to t('.features'), '#', class: 'nav-link'
     %ul.nav.navbar-nav.pull-xs-right
-      %li.nav-item= link_to 'Sign up', new_user_registration_path, class: 'nav-link'
-      %li.nav-item= link_to 'Sign in', new_user_session_path,      class: 'nav-link'
+      %li.nav-item= link_to t('.sign_up'), new_user_registration_path, class: 'nav-link'
+      %li.nav-item= link_to t('.sign_in'), new_user_session_path,      class: 'nav-link'

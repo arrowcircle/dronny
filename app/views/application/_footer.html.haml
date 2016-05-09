@@ -1,8 +1,5 @@
 %footer
   %ul.nav.navbar-nav
-    %li.nav-item= link_to 'Features', '#', class: 'nav-link'
-    %li.nav-item= link_to 'About', '#', class: 'nav-link'
+    %li.nav-item= link_to t('.about'), '#', class: 'nav-link'
   %small
-    %strong dronny
-    – some cute smart ass words about the project.
-    Built with #{link_to 'Rails 5 beta', 'http://weblog.rubyonrails.org/releases/'}.
+    = t('.copyright', year: Time.now.year)
