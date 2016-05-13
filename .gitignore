@@ -22,6 +22,7 @@
 /.ruby-gemset
 /.rvmrc
 /.powrc
+/.powenv
 
 # Ignore Carrierwave uploads
 /public/uploads
