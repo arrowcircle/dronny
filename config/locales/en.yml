@@ -20,4 +20,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  application:
+    header:
+      brand: "Dronny"
+      logo-alt: "Dronny logo"
+      my_builds: "My builds"
+      sign_in: "Sign in"
+      sign_up: "Sign up"
+      sign_out: "Sign out"
+      search: "Search"
+      search_btn: "Go"
+      profile: "Profile"
+    footer:
+      features: "Features"
+      about: "About"
+      copyright: "%{year} © Dronny"
+  welcome:
+    index:
+      jumbotitle: 'Got a swell drone?'
+      jumbosubtitle: 'Tell the others how you built it!'

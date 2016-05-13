@@ -27,6 +27,15 @@ gem 'jbuilder', '~> 2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use Devise for the authentication machinery
+gem 'devise', '~> 4.0.1'
+# Override Devise default views with bootstrapped ones
+gem 'devise-bootstrap-views', '~> 0.0.8'
+
+# User carrierwave for userpic processing
+gem 'carrierwave', '~> 0.11.0'
+gem 'mini_magick', '~> 4.5.1'
+
 gem 'bootstrap', github: 'twbs/bootstrap-rubygem'
 gem 'haml-rails'
 

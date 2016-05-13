@@ -115,6 +115,7 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
+    bcrypt (3.1.11)
     brakeman (3.2.1)
       erubis (~> 2.6)
       haml (>= 3.0, < 5.0)
@@ -154,6 +155,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.11.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     codeclimate-engine-rb (0.3.1)
       virtus (~> 1.0)
     coercible (1.0.0)
@@ -171,6 +177,13 @@ GEM
     debug_inspector (0.0.2)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
+    devise (4.0.2)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.1)
+      responders
+      warden (~> 1.2.3)
+    devise-bootstrap-views (0.0.8)
     diff-lcs (1.2.5)
     equalizer (0.0.11)
     erubis (2.7.0)
@@ -230,6 +243,7 @@ GEM
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0221)
+    mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     mixlib-cli (1.5.0)
@@ -240,6 +254,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    orm_adapter (0.5.0)
     parser (2.3.0.7)
       ast (~> 2.2)
     pg (0.18.4)
@@ -287,6 +302,8 @@ GEM
       codeclimate-engine-rb (~> 0.3.1)
       parser (~> 2.3, >= 2.3.0.6)
       rainbow (~> 2.0)
+    responders (2.2.0)
+      railties (>= 4.2.0, < 5.1)
     rubocop (0.39.0)
       parser (>= 2.3.0.7, < 3.0)
       powerpack (~> 0.1)
@@ -356,6 +373,8 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
+    warden (1.2.6)
+      rack (>= 1.0)
     web-console (3.1.1)
       activemodel (>= 4.2)
       debug_inspector
@@ -379,8 +398,11 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rvm
   capybara
+  carrierwave (~> 0.11.0)
   coffee-rails (~> 4.1.0)
   database_cleaner
+  devise (~> 4.0.1)
+  devise-bootstrap-views (~> 0.0.8)
   factory_girl_rails
   ffaker
   haml-rails
@@ -389,6 +411,7 @@ DEPENDENCIES
   launchy
   letter_opener
   listen (~> 3.0.5)
+  mini_magick (~> 4.5.1)
   pg (~> 0.18)
   puma (~> 3.0)
   quiet_assets
