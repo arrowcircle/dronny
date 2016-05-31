@@ -5,8 +5,14 @@
     %ul.nav.navbar-nav
       %li.nav-item.active
         %a.nav-link{:href => "#"}
-          My builds
+          = t('.my_builds')
           %span.sr-only (current)
+      - if current_user.admin?
+        %li.nav-item= link_to 'Users', '#', class: 'nav-link'
+        %li.nav-item= link_to 'Brands', '#', class: 'nav-link'
+        %li.nav-item= link_to 'Items', '#', class: 'nav-link'
+        %li.nav-item= link_to 'Stores', '#', class: 'nav-link'
+
     %ul.nav.navbar-nav.pull-xs-right
       = form_tag '#', class: 'form-inline' do
         = text_field_tag :query, params[:query], class: 'form-control', placeholder: t('.search')

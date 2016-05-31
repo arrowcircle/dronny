@@ -1,0 +1,20 @@
+ru:
+  application:
+    header:
+      brand: Дронни
+      logo-alt: Дронни
+      my_builds: Билды
+      sign_in: Вход
+      sign_up: Регистрация
+      sign_out: Выход
+      search: Что ищем?
+      search_btn: Поиск
+      profile: Профиль
+    footer:
+      features: Навороты
+      about: О проекте
+      copyright: "%{year} © Дронни"
+  welcome:
+    index:
+      jumbotitle: 'Got a swell drone?'
+      jumbosubtitle: 'Tell the others how you built it!'
