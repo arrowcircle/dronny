@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160621131452) do
     t.string   "title"
     t.string   "logo"
     t.string   "site"
+    t.string   "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

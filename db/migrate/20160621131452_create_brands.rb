@@ -4,6 +4,7 @@ class CreateBrands < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :logo
       t.string :site
+      t.string :slug
 
       t.timestamps
     end

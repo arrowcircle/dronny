@@ -6,6 +6,16 @@ module Sluggable
 
   def set_default_slug
     return if slug.present?
-    self.slug = title.to_slug.transliterate(:russian).to_s.parameterize if title.present?
+    self.slug = Russian
+      .translit(title)
+      .tr(' ', '-')
+      .gsub(/[^\x00-\x7F]+/, '')
+      .gsub(/[^\w_ \-]+/i, '')
+      .gsub(/[ \-]+/i, '-')
+      .gsub(/^\-|\-$/i, '').downcase if title.present?
+  end
+
+  def to_param
+    "#{id}-#{slug}"
   end
 end

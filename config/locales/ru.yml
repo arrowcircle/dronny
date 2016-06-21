@@ -5,7 +5,8 @@ ru:
     header:
       brand: Дронни
       logo-alt: Дронни
-      my_builds: Билды
+      builds: Билды
+      brands: Брэнды
       sign_in: Вход
       sign_up: Регистрация
       sign_out: Выход
