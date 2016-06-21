@@ -9,4 +9,6 @@
       - @build.errors.full_messages.each do |error|
         %li= error
   = f.text_field :title
-  = f.submit t('.submit')
+  %br
+  = f.text_area :description
+  = f.submit t('submit')

@@ -10,6 +10,7 @@ class BuildsController < ApplicationController
 
   def destroy
     @build = edit_scope.find(params[:id])
+    redirect_to @build, notice: t('.build_deleted')
   end
 
   def new

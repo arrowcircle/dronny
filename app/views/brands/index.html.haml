@@ -1,0 +1,25 @@
+%h1= t('.title')
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Logo
+      %th Site
+      %th
+      %th
+      %th
+
+  %tbody
+    - @brands.each do |brand|
+      %tr
+        %td= brand.title
+        %td= brand.logo
+        %td= brand.site
+        %td= link_to 'Show', brand
+        %td= link_to 'Edit', edit_brand_path(brand)
+        %td= link_to 'Destroy', brand, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to t('add'), new_brand_path

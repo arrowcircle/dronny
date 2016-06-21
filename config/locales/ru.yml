@@ -1,4 +1,6 @@
 ru:
+  add: Добавить
+  submit: Сохранить
   application:
     header:
       brand: Дронни
@@ -20,9 +22,13 @@ ru:
       jumbosubtitle: 'Tell the others how you built it!'
   builds:
     index:
-      builds: Билды
-      add: Добавить
+      title: Билды
     edit:
       form_title_new: Добавить билд
       form_title_edit: Редактировать билд
-      submit: 'Сохранить'
+  brands:
+    index:
+      title: Бренды
+    edit:
+      form_title_new: Добавить бренд
+      form_title_edit: Редактировать бренд
