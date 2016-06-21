@@ -1,0 +1,5 @@
+%h1= t '.builds'
+= link_to t('.add'), new_build_path
+%table.table
+  = render @builds
+=# paginate @builds

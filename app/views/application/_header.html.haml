@@ -3,20 +3,18 @@
   = link_to t('.brand'), root_url, class: 'navbar-brand'
   - if user_signed_in?
     %ul.nav.navbar-nav
-      %li.nav-item.active
-        %a.nav-link{:href => "#"}
-          = t('.my_builds')
-          %span.sr-only (current)
+      %li{ class: ['nav-item', "#{'active' if controller_name == 'builds'}"] }
+        = link_to t('.my_builds'), builds_path, class: 'nav-link'
       - if current_user.admin?
         %li.nav-item= link_to 'Users', '#', class: 'nav-link'
         %li.nav-item= link_to 'Brands', '#', class: 'nav-link'
         %li.nav-item= link_to 'Items', '#', class: 'nav-link'
         %li.nav-item= link_to 'Stores', '#', class: 'nav-link'
-
     %ul.nav.navbar-nav.pull-xs-right
-      = form_tag '#', class: 'form-inline' do
-        = text_field_tag :query, params[:query], class: 'form-control', placeholder: t('.search')
-        = submit_tag t('.search_btn'), class: 'btn btn-success'
+      -#
+        = form_tag '#', class: 'form-inline' do
+          = text_field_tag :query, params[:query], class: 'form-control', placeholder: t('.search')
+          = submit_tag t('.search_btn'), class: 'btn btn-success'
       %li.nav-item= link_to t('.profile'), edit_user_registration_path, class: 'nav-link'
       %li.nav-item= link_to t('.sign_out'), destroy_user_session_path,  class: 'nav-link', method: :delete
   - else

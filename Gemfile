@@ -38,6 +38,7 @@ gem 'mini_magick', '~> 4.5.1'
 
 gem 'bootstrap', github: 'twbs/bootstrap-rubygem'
 gem 'haml-rails'
+# gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

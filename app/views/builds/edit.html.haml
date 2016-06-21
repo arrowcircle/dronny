@@ -1,0 +1,12 @@
+%h1
+  - if @build.persisted?
+    = t '.form_title_edit'
+  - else
+    = t '.form_title_new'
+= form_for @build do |f|
+  - if @build.errors.any?
+    %ul
+      - @build.errors.full_messages.each do |error|
+        %li= error
+  = f.text_field :title
+  = f.submit t('.submit')
