@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Devise for the authentication machinery
-gem 'devise', '~> 4.0.1'
+gem 'devise', '~> 4.1'
 # Override Devise default views with bootstrapped ones
 gem 'devise-bootstrap-views', '~> 0.0.8'
 
