@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.0.rc2'
+gem 'rails', '5.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Devise for the authentication machinery
-gem 'devise', '~> 4.1'
+gem 'devise'
 # Override Devise default views with bootstrapped ones
 gem 'devise-bootstrap-views', '~> 0.0.8'
 
@@ -52,14 +52,15 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubycritic', require: false
   gem 'sandi_meter', require: false
-  gem 'quiet_assets'
+  # gem 'quiet_assets'
 end
 
 group :test do
   gem 'database_cleaner'
-  %w[rspec rspec-core rspec-expectations rspec-mocks rspec-support rspec-rails].each do |lib|
-    gem lib, git: "git://github.com/rspec/#{lib}.git", branch: 'master'
-  end
+  gem 'rspec-rails'
+  # %w[rspec rspec-core rspec-expectations rspec-mocks rspec-support rspec-rails].each do |lib|
+  #   gem lib, git: "git://github.com/rspec/#{lib}.git", branch: 'master'
+  # end
   gem 'capybara'
   gem 'factory_girl_rails'
 end
